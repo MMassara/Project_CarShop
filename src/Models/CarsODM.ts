@@ -15,10 +15,6 @@ class CarsODM extends AbstractODM<ICar> {
     });
     super(schema, 'Cars');
   }
-
-  public async create(car: ICar): Promise<ICar> {
-    return this.model.create({ ...car });
-  }
 }
 
 export default CarsODM;

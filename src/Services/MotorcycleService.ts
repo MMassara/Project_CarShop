@@ -1,15 +1,15 @@
-import Motorcycles from '../Domains/Motorcycles';
-import IMotorcycles from '../Interfaces/IMotorcycles';
+import Motorcycle from '../Domains/Motorcycle';
+import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcyclesODM from '../Models/MotorcyclesODM';
 
-export default class MotorcycleSerivce {
-  private createMotocyclesDomain(motorcycles: IMotorcycles): IMotorcycles {
-    return new Motorcycles(motorcycles);
+export default class MotorcycleService {
+  private createMotocyclesDomain(motorcycles: IMotorcycle): Motorcycle {
+    return new Motorcycle(motorcycles);
   }
 
-  public async registerNewMotocycle(motorcycles: IMotorcycles) {
+  public async registerNewMotocycle(motorcycle: IMotorcycle) {
     const motocycleODM = new MotorcyclesODM();
-    const newMotocycle = await motocycleODM.create(motorcycles);
+    const newMotocycle = await motocycleODM.create(motorcycle);
 
     return this.createMotocyclesDomain(newMotocycle);
   }

@@ -1,10 +1,10 @@
 import { Schema } from 'mongoose';
-import IMotorcycles from '../Interfaces/IMotorcycles';
+import IMotorcycle from '../Interfaces/IMotorcycle';
 import AbstractODM from './AbstractODM';
 
-class MotorcyclesODM extends AbstractODM<IMotorcycles> {
+class MotorcyclesODM extends AbstractODM<IMotorcycle> {
   constructor() {
-    const schema = new Schema<IMotorcycles>({
+    const schema = new Schema<IMotorcycle>({
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },

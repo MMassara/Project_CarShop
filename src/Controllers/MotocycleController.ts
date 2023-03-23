@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import IMotorcycles from '../Interfaces/IMotorcycles';
+import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcycleService from '../Services/MotorcycleService';
 
-export default class MotocyclesController {
+export default class MotorcycleController {
   private req: Request;
   private res: Response;
   private next: NextFunction;
@@ -17,7 +17,7 @@ export default class MotocyclesController {
 
   public async create() {
     const { model, year, color, buyValue, engineCapacity, category, status } = this.req.body;
-    const motorcycles: IMotorcycles = {
+    const motorcycles: IMotorcycle = {
       model, 
       year, 
       color,

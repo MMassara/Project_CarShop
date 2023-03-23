@@ -1,10 +1,8 @@
-export default interface IMotorcycles {
+export default interface IVehicle {
   id?: string;
   model: string;
   year: number;
   status?: boolean;
   color: string;
   buyValue: number;
-  category: string;
-  engineCapacity: number;
 }

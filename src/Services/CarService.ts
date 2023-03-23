@@ -25,7 +25,7 @@ export default class CarService {
   public async findById(id: string) {
     const carsODM = new CarsODM();
     const selectedCar = await carsODM.findById(id);
-    if (selectedCar === null) return null;
+    if (!selectedCar) return null;
     const selectedCarArray = selectedCar.map((car) => this.createCarDomain(car));
     
     return selectedCarArray;

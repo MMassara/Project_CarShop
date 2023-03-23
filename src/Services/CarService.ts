@@ -30,4 +30,13 @@ export default class CarService {
     
     return selectedCarArray;
   }
+
+  public async updateOne(id: string, obj: object) {
+    const carsODM = new CarsODM();
+    const selectedCarToUpdate = await carsODM.update(id, obj);
+    if (selectedCarToUpdate == null) return null;
+    const selectedCarToUpdateArray = [selectedCarToUpdate].map((car) => this.createCarDomain(car));
+
+    return selectedCarToUpdateArray;
+  }
 }

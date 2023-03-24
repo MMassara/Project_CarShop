@@ -52,4 +52,20 @@ export default class MotorcycleController {
     }
     return this.res.status(200).json(selectedMotorcycle[0]);
   }
+
+  public async updateOne() {
+    const { id } = this.req.params;
+    const infosToUpdate = this.req.body;
+
+    try {
+      const selectedMotorcycleToUpdate = await this.service.updateOne(id, infosToUpdate);
+      if (selectedMotorcycleToUpdate === null) {
+        return this.res.status(404).json({ message: 'Motorcycle not found' });
+      }
+      return this.res.status(200).json(selectedMotorcycleToUpdate[0]);
+    } catch (err) {
+      const error = err as Error;
+      return this.res.status(422).json({ message: error.message });
+    }
+  }
 }

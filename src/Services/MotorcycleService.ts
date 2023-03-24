@@ -32,4 +32,15 @@ export default class MotorcycleService {
     
     return selectedMotorcycleArray;
   }
+
+  public async updateOne(id: string, obj: object) {
+    const motocycleODM = new MotorcyclesODM();
+    const selectedMotorcycleToUpdate = await motocycleODM.update(id, obj);
+
+    if (selectedMotorcycleToUpdate === null) return null;
+    const selectedMotorcycleToUpdateArray = [selectedMotorcycleToUpdate]
+      .map((motorcycle) => this.createMotocyclesDomain(motorcycle));
+    
+    return selectedMotorcycleToUpdateArray;
+  }
 }

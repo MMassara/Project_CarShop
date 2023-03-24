@@ -95,6 +95,31 @@ describe('Testa a camada service referente a Cars', function () {
     expect(result).to.be.deep.equal([]);
   });
 
+  it('Verifica se é possível efetuar uma atualização corretamente', async function () {
+    const selectedCarOutPut: ICar = {
+      id: '634852326b35b59438fbea2f',
+      model: 'BMW',
+      year: 1992,
+      color: 'Red',
+      status: true,
+      buyValue: 12000,
+      doorsQty: 2,
+      seatsQty: 5,
+    };
+
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(selectedCarOutPut);
+
+    const service = new CarService();
+    const result = await service.updateOne('634852326b35b59438fbea2f', { model: 'BMW',
+      year: 1992,
+      color: 'Red',
+      status: true,
+      buyValue: 12000,
+      doorsQty: 2,
+      seatsQty: 5 }) as unknown as Car[];
+    expect(result[0]).to.be.deep.equal(selectedCarOutPut);
+  });
+
   afterEach(function () {
     sinon.restore();
   });

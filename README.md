@@ -1,10 +1,9 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Projeto desenvolvido aplicando os princípios de Programação Orientada a Objetos (POO) para construção de uma API com CRUD, gerenciando um empreendimento fictício de concessionária de veículos.
+
+Utilizei o MongoDB através do framework do Mongoose.
+
+Para rodar o projeto com docker, execute o comando docker-compose up -d no terminal do diretório. Após finalizado o processo, digite o comando docker exec -it car_shop bash e instale as dependências com o comando npm install.
+
+Para rodar o projeto sem utilização de docker, digite npm install no terminal do diretório do projeto.
+
+Estou aberto à quaisquer dicas e feedbacks!
